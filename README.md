@@ -47,7 +47,7 @@ Etapa de ajuste de offset y ganancia, mediante amplificadores operacionales y po
 
 La intención de este circuito era obtener una señal suficientemente limpia para visualizar en Arduino y luego procesarla, aunque se realizó el montaje y se intentaron varios ajustes, no fue posible obtener una señal pletismográfica clara y estable con el circuito analógico. 
 
-Debido a esto, se tomó la decisión de usar un módulo sensor de pulso que permitiera adquirir la señal de manera más estable, el cual va conectado a una placa Arduino UNO. Este módulo facilitó la captura de la señal, ya que integra internamente una etapa de sensado más estable y, en algunos casos, parte del acondicionamiento necesario.
+Debido a esto, se tomó la decisión de usar un módulo sensor de pulso que permitiera adquirir la señal de manera más estable, el cual va conectado a una placa esp32. Este módulo facilitó la captura de la señal, ya que integra internamente una etapa de sensado más estable y, en algunos casos, parte del acondicionamiento necesario.
 
 Gracias a esta modificación, se logró obtener una señal adecuada para visualizarla en el Serial Plotter, registrar los pulsos, detectar máximos y mínimos, y calcular el SPI de manera continua.
 
@@ -93,10 +93,24 @@ Para validar el comportamiento del sistema se utilizó la maniobra Cold Pressor 
 La captura duró 2 minutos, divididos así:
 
 Primeros 40 segundos: condición basal
+
+![WhatsApp Image 2026-03-26 at 9 48 29 PM](https://github.com/user-attachments/assets/83a40d17-cfbd-44e8-8212-4007e3170e4b)
+
+Se observa la señal ppg y ligeramente en algunas ondas el nodo dicrótico y el SPI ronda valores de 40-45
 Siguientes 40 segundos: aplicación del CPT
+
+![WhatsApp Image 2026-03-26 at 9 48 29 PM (1)](https://github.com/user-attachments/assets/4de52d21-1a38-4d56-b23f-539ad2533998)
+
+Al aplicar el Cold Pressor Test que en nuestro caso fue la aplicación de una bolsa de gel congelada en el antebrazo, se observa como disminuye la amplitud de la señal y al observar los valores del SPI se nota como este aumenta a un nivel mayor que el "normal" superando 50
 Últimos 40 segundos: recuperación
 
+![WhatsApp Image 2026-03-26 at 9 48 29 PM (1)](https://github.com/user-attachments/assets/b0a362e9-2ba0-4efe-8465-4282c15b182b)
+
+Al quitar el gel congelado del antebrazo se observa como la señal va volviendo a los niveles de amplitud normales y se controla nuevamente, en el momento de recuperación los valores de SPI rondan los 45-50 
+
 Durante cada etapa se registraron los valores del SPI para comparar cómo cambiaba antes, durante y después de la maniobra.
+
+![WhatsApp Image 2026-03-26 at 9 48 30 PM (1)](https://github.com/user-attachments/assets/d568f382-d74a-4da3-b9ea-831c4f8a4d60)
 
 Resultados esperados
 
@@ -116,6 +130,6 @@ Uno de los puntos más importantes de esta práctica fue entender que, en labora
 Se comprendió el principio básico de adquisición de una señal pletismográfica a partir de cambios en el volumen sanguíneo periférico.
 Aunque se intentó implementar el sistema usando un circuito analógico, no se logró obtener una señal adecuada para el análisis.
 Como solución práctica, se utilizó un módulo sensor que permitió adquirir la señal de manera más estable.
-Con la señal obtenida fue posible aplicar un algoritmo en MATLAB para detectar máximos y mínimos, estimar características del pulso y calcular el SPI.
+Con la señal obtenida fue posible aplicar un algoritmo en MATLAB para detectar máximos y mínimos, estimar características del pulso y calcular el SPI, al principio tratamos de aplicar la detección de máximos y mínimos mediante el algoritmo pan tompkins, comprendimos que este tipo de detección de máximos y mínimos era erróneo para el método de ppg por lo que nos daba valores y señal SPI erróneos por lo que decidimos pasar a una detección mediante la primera derivada obteniendo mucho mejores resultados.
 La maniobra Cold Pressor Test permitió observar cambios fisiológicos que ayudan a validar el comportamiento del sistema.
 La práctica mostró la importancia de combinar adquisición experimental, procesamiento de señales y análisis fisiológico en aplicaciones biomédicas.
