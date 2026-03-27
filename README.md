@@ -112,6 +112,7 @@ Durante cada etapa se registraron los valores del SPI para comparar cómo cambia
 
 ![WhatsApp Image 2026-03-26 at 9 48 30 PM (1)](https://github.com/user-attachments/assets/d568f382-d74a-4da3-b9ea-831c4f8a4d60)
 
+En la gráfica del SPI se observa el momento en el que aumenta debido a la aplicación del CPT, aunque baja rápidamente por un motivo que se asume fue una presión aplicada diferente, respiración o habla al momento de la toma del CPT
 Resultados esperados
 
 Al finalizar la práctica se esperaba lograr:
@@ -121,6 +122,14 @@ La observación de pulsos en tiempo real,
 La extracción de características de la señal,
 El cálculo cuantitativo del SPI, y la comparación del comportamiento del índice durante una maniobra fisiológica como el CPT.
 
+Preguntas para discusión
+-Pregunta 1:¿Cómo se relacionan las variaciones del volumen sanguíneo periférico con el balance autonómico?
+
+Las variaciones del volumen se relacionan con el sistema de balance autonómico debido a que cuando el sistema simpático es activado genera vasoconstricción haciendo que el volumen se reduzca, mientras que la activación parasimpática aumenta el volumen debido a la vasodilatación.
+
+-Pregunta 2:¿Cómo se compara el SPI con otros índices comúnmente empleados en cirugía, como el índice nocicepción-analgesia (ANI) y el índice de perfusión?
+
+Al momento de cirugía con el SPI se basa en la PPG y los intervalos entre latidos, esto se interpreta como niveles analgésicos controlados o estrés durante la cirugía. Mientras que el ANI (Analgesia Nociception Index) se basa en la HRV reflejando actividad parasimpática lo que representa en este caso el control de dolor, a mayor ANI indica un alto tono vagal y un control del dolor, un ANI bajo indica dolor o estrés. El PI (Índice de perfusión) se basa en la relación pulsátil de la PPG lo que permite observarla de manera más periférica indicando activación simpática (vasoconstricción) o activación parasimpática (vaso dilatación).
 Análisis
 
 
